@@ -1,7 +1,8 @@
 
 import { useMemo } from 'react';
 import './App.css'
-import ILightbox, { useILightboxData, type UseILightboxData, type ILightboxImages, type ILightboxOptions } from './components/Lightbox';
+import ILightbox, { useILightboxData, type UseILightboxData, type ILightboxImages, type ILightboxOptions } from 'i-lightbox';
+import 'i-lightbox/dist/style.css';
 
 function App() {
 
@@ -69,7 +70,7 @@ function App() {
       <h1 className='title'> ILightbox React Package by Ilham Gurbanly</h1>
 
       <section className='gallery-section'>
-        {images.map((item, i) => (
+        {images.map((item: any, i: any) => (
           <img className='gallery-section-img' key={i} src={item.src} onClick={() => {
             ILightboxStates.setActiveIndex(i);
             ILightboxStates.setShow(true);
